@@ -1,7 +1,6 @@
 // memindahkan file ke folder
 // mv.c
 //T07
-
 #include "fcntl.h"
 
 #include "user.h"
@@ -109,7 +108,7 @@ char* fmtname(char *path)
   char *p; 
 
 
-  // Find first character after last slash.
+// Temukan karakter pertama setelah slash terakhir.
 
   for(p=path+strlen(path); p >= path && *p != '/'; p--)
 
@@ -119,7 +118,7 @@ char* fmtname(char *path)
 
 
 
-  // Return blank-padded name.
+  // kembalikan blank-padded name.
 
   if(strlen(p) >= DIRSIZ)
 
@@ -242,7 +241,7 @@ void mv_all(char *awal, char *akhir)
 
   
 
-        //select source
+        //select awal
 
         strcpy(awals,awal); 
 
@@ -252,7 +251,7 @@ void mv_all(char *awal, char *akhir)
 
         
 
-        //select dest
+        //select akhir
 
         strcpy(dawal,akhir); 
 
@@ -280,7 +279,7 @@ void mv_all(char *awal, char *akhir)
 
       
 
-      //select source
+      //select awal
 
         strcpy(awals,awal); 
 
@@ -290,7 +289,7 @@ void mv_all(char *awal, char *akhir)
 
         
 
-        //select dest
+        //select akhir
 
         strcpy(dawal,akhir); 
 
@@ -300,7 +299,7 @@ void mv_all(char *awal, char *akhir)
 
       
 
-      //domove
+      //melakukan pemindahan 
 
       mv(awals,dawal); 
 
@@ -410,3 +409,5 @@ void mv(char *awal,char *akhir)
   close(fdakhir); 
 
 }
+
+//FP20
