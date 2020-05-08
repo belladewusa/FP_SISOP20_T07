@@ -1,3 +1,7 @@
+// digunakan untuk memindahkan file lama ke file baru 
+// mv.c
+//T07
+
 #include "user.h" 
 
 #include "stat.h" 
