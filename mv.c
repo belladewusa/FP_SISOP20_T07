@@ -1,15 +1,18 @@
 // memindahkan file ke folder
-// mv.c
-//T07
-#include "fcntl.h"
 
-#include "user.h"
+// mv.c
+
+//T07
+
+#include "fcntl.h" 	
+
+#include "user.h"	
 
 #include "types.h"
 
-#include "fs.h"	 
+#include "fs.h"	  
 
-#include "stat.h"
+#include "stat.h" 
 
 
 char buffer[512]; 
