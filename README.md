@@ -2,3 +2,12 @@
 
 NABELLA DESYAWULANSARI 05311840000039
 ACHSAN NOORSALAM 05311840000021
+
+
+## command 1 clear
+
+## command 2 Head
+
+## command 3 tail 
+
+## command 4 MV
