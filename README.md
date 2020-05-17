@@ -63,35 +63,37 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk men
 
 tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk memindahkan sebuah file ke direktori baru
 
+PENJELASAN CODINGAN 
 
-// Perbedaan antara kedua sintaksis ini halus tetapi penting. 
-//Jika file header disertakan dalam <>, preprocessor akan mencari jalur direktori yang telah ditentukan untuk menemukan file header. 
-//Jika file header dilampirkan dalam "", preprocessor akan mencari file header di direktori yang sama dengan file sumber.
+
+ Perbedaan antara kedua sintaksis ini halus tetapi penting. 
+Jika file header disertakan dalam <>, preprocessor akan mencari jalur direktori yang telah ditentukan untuk menemukan file header. 
+Jika file header dilampirkan dalam "", preprocessor akan mencari file header di direktori yang sama dengan file sumber.
 
 	#include "types.h"
 	
-//Berbagai TIPE DATA digunakan di tempat lain
+Berbagai TIPE DATA digunakan di tempat lain
 
 	#include "stat.h"
 
-// <sys / stat.h> menentukan struktur data yang dikembalikan oleh fungsi fstat () , lstat () , dan stat ()
-//Fungsi stat() dan lstat() mengambil argumen nama file . Jika file tersebut merupakan tautan simbolis , stat() mengembalikan atribut dari target tautan,
+ <sys / stat.h> menentukan struktur data yang dikembalikan oleh fungsi fstat () , lstat () , dan stat ()
+Fungsi stat() dan lstat() mengambil argumen nama file . Jika file tersebut merupakan tautan simbolis , stat() mengembalikan atribut dari target tautan,
 
 	#include "user.h"
 
-//untuk GDB ,GDB adalah debugger gratis yang ditawarkan dari Proyek GNU
+untuk GDB ,GDB adalah debugger gratis yang ditawarkan dari Proyek GNU
 	
 	#include "fcntl.h"
 
-//kontrol file
+kontrol file
 
 	#include "fs.h"
 
-// pembungkus sistem file
+pembungkus sistem file
 
-//Void.Fungsi ini tidak mengembalikan nilai keluaran ( return output ) yang didapat dari hasil proses tersebut
+Void.Fungsi ini tidak mengembalikan nilai keluaran ( return output ) yang didapat dari hasil proses tersebut
 
-//fungsi untuk memindahkan src ke dest
+fungsi untuk memindahkan src ke dest
 
 		void move(char *src, char *dest)
 		    {
@@ -108,7 +110,7 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
 			}
 		    }
 
-//membuka folder dan memindahkan file
+membuka folder dan memindahkan file
 
 	void aster(char *dest)
 	    {
@@ -119,7 +121,7 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
 		struct dirent de; //direktori yg dimasuki = de
 		char buf[512]; // alokasi buffer 512 byte = 64 bit
 
-  //mmenambahkan/memindahkan  file ke folder  
+  mmenambahkan/memindahkan  file ke folder  
   
          while(read(fd, &de, sizeof(de)) == sizeof(de)) 
             {
@@ -141,7 +143,7 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
 		char buf[512];
 		struct stat st;
 
-//jika tidak ada argumen     / proses argumen   
+jika tidak ada argumen     / proses argumen   
 
         if((fd = open(argv[argc-1],O_RDONLY))<0) //buka folder, read only
         {       
@@ -149,14 +151,14 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
         lndest=strlen(argv[argc-1]);
         }
         
-//jika mengetik mv saja akan keluar info cara penggunaan 
+jika mengetik mv saja akan keluar info cara penggunaan 
       
       if (argc<2)
             {
             printf(1,"Usage: mv file dest\n");
             }
     
-//berhasil dipindahkan
+berhasil dipindahkan
      
      if(strcmp(argv[1],"*")==0) //perbandingan, untuk cek file ada
                 {
@@ -164,7 +166,7 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
                 exit();
                 }
 
-//cek jika dest bukan direktori     
+cek jika dest bukan direktori     
        
        if(cek==0 && st.type != T_DIR) 
             {
@@ -172,11 +174,11 @@ tugas :perserta diminta membuat command pada vx-6 yang memiliki fungsi untuk mem
             exit();
             }
     
-//link argumen ke sebuah direktori
+link argumen ke sebuah direktori
        
        for(i=1; i<argc-1; i++)
         
-// menambahkan dari nama file ke nama direktori         {
+menambahkan dari nama file ke nama direktori         {
           
 	  strcpy(buf,argv[argc-1]);
             strcpy(&buf[lndest],"/");
